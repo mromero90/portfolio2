@@ -11,3 +11,8 @@
     width: 80px;
     background-color: #ffffff
 }
+
+#container {
+    color: #ffffff;
+    border: 5px double #5f5f5f;
+}
