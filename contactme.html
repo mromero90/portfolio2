@@ -24,12 +24,72 @@ background-repeat:repeat;
     <a href="index.html" title"Home">Home</a>
     <a href="portfolio.html" title"Portfolio">Portfolio</a>
     <a href="aboutme.html" title"About Me">About Me</a>
-</div
+</div>
 
-<h1>
-    Contact Me
-</h1>
+<div class="container">
+	<div class="row">
+		<header class="col-md-12">
+			<h1>Contact Me</h1>
+		</header>
+	</div>
+	
+	<div class="row">
+		<article class="col-md-12">
+			<p class="message"></p>
+			<form action="http://www.tcnj.edu/~romero9/jsonpform2email.php">
+				<div class="form-group">
+					<label>From</label>
+					<input class="form-control" type="text" name="from"  placeholder="Enter email">
+				</div>
+				<div class="form-group">
+					<label>Subject</label>
+					<input class="form-control" type="text" name="subject"  placeholder="Enter Subject">
+				</div>
+				<div class="form-group">
+					<label>Message</label>
+					<textarea class="form-control" name="message"></textarea>
+				</div>
+				<input type="submit" class="btn btn-default" name="submit" value="Submit Feedback">
+			</form>
 
+		</article>
+	</div>
+	
+	<div class="row">
+		<footer></footer>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+<script>
+
+/* jsonp form to email function */
+$('form').submit(function() {
+  var url = $(this).attr("action");
+  var params = $(this).serialize();
+  
+  $.getJSON(url + '?' + params + "&callback=?", function(data) {
+   
+	switch(data[0].status){
+		case 'success':
+			$('.message').addClass("text-success").html('Thank you, <strong>' + data[0].from + '</strong>, for sending us feedback!');
+			$('form')[0].reset();
+			break;
+		case 'invalid email':
+			$('.message').removeClass("text-success").addClass("text-danger").html('Please provide a valid email address!');
+			break;
+		case 'failed to send':
+			$('.message').removeClass("text-success").addClass("text-danger").html('Failed to send email.');
+			break;
+	}
+  });
+  return false;
+});
+
+</script>
 </body>
 
 </html>
