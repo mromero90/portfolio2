@@ -2,6 +2,7 @@
     a:visited {text-decoration:none;}
     a:hover {text-decoration:underline;}
 #header {
+    height:200;
   margin: 20px;
   background-color: #c1c2c3;
     border: 5px double #5f5f5f;
@@ -10,7 +11,7 @@
 #nav a {
     color: #439e8e;
     width: 80px;
-    margin: 40px 20px;
+    margin: 20px 20px;
     padding: 5px 50px;
     background-color: #ffffff;
     font-family:Arial,Helvetica,sans-serif;
