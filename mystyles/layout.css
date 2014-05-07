@@ -10,7 +10,9 @@
     color: #439e8e;
     width: 80px;
     background-color: #ffffff
-    padding: 25px;
+   nav.a { 
+       padding: 25px 50px;
+}
 }
 
 #container {
