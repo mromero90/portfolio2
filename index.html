@@ -1,8 +1,22 @@
-<! doctype html />
+<!DOCTYPE html>
 <html>
-
-
-<style>
+<!-- head needs to be up here right under the <html> tag and before the <body> tag - 
+remember the <head></head> element is for telling the browser about your page, not 
+for markup the user will see -->
+<head>
+	
+	<!-- include a title for your pages -->
+	<title>My Portfolio</title>
+	
+	<!-- should always tell the browsers what character set to use-->
+	<meta charset="utf-8">
+	
+	<!-- this is the stylesheet needed by the Lightbox 2 jQuery plugin -->
+	<link rel="stylesheet" href="./mystyles/lightbox.css">
+	<!-- then load your own stylesheet(s) -->
+	<link rel="stylesheet" href="./mystyles/layout.css">
+	<!-- your custom embedded styles -->
+	<style>
 body {
 background-image:url("https://farm8.staticflickr.com/7367/13897948290_6fe2b93658_o.png");
 background-repeat:repeat;
@@ -16,31 +30,40 @@ background-repeat:repeat;
     padding: 70px;
     border: 5px double #5f5f5f;
 }
-</style>
+	</style>
 
-
-<head>
-<div align= "center" id="header">
-    <img src="https://farm8.staticflickr.com/7214/14039145302_b1840bc067_o.png" width="336" height="154"/>
-</div>
-  <link rel="stylesheet" href="./mystyles/layout.css">
+<!-- close your head tag -->
 </head>
 
-
+<!-- the markup your users will see goes inside the <body> tag -->
 <body>
 
+<div align="center" id="header">
+    <img src="https://farm8.staticflickr.com/7214/14039145302_b1840bc067_o.png" width="336" height="154" alt="header background" />
+</div>
+
 <div align="center" id="nav">
-         <a href="index.html" title"Home">Home</a>
-         <a href="portfolio.html" title"Portfolio">Portfolio</a>
-         <a href="aboutme.html" title"About Me">About</a>
-         <a href="contactme.html" title"Contact Me">Contact</a>  
+         <a href="index.html" title="Home">Home</a>
+         <a href="portfolio.html" title="Portfolio">Portfolio</a>
+         <a href="aboutme.html" title="About Me">About</a>
+         <a href="contactme.html" title="Contact Me">Contact</a>  
 
 </div>
 
 <div align="center" id="mainimg">
-    <img src="https://farm6.staticflickr.com/5475/14124290681_a1f79448ea_b.jpg" 
-    width="400" height="500" alt="self.portrait-shoes2print"/>
+	<a href="https://farm6.staticflickr.com/5475/14124290681_a1f79448ea_b.jpg" data-lightbox="image-1" data-title="My caption">
+		<img src="https://farm6.staticflickr.com/5475/14124290681_a1f79448ea_b.jpg" width="400" height="500" alt="self.portrait-shoes2print" />
+	</a> 
 </div>
+
+<!-- these are the javascript libraries neededd for the Lightbox 2 Gallery plugin -->
+
+<!-- jQuery ALWAYS LOAD jQUERY AT THE BOTTOM OF THE PAGE (at the bottom of the code!)-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- THIS IS FOR THE IMAGE GALLERY -->
+<script src="js/lightbox.min.js"></script> 
+
+<!-- end Lightbox 2 librarys -->
 </body>
 
 </html>
